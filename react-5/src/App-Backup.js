@@ -1,13 +1,14 @@
+/* import './assets/thu/css/bootstrap.css' */
 import React from 'react'
 import Navbar from './Navbar/Navbar'
-import CompA from "./PropsEX/CompA"
-
+import Product from './Product/Product'
+import ObjectTest from './PropsEX/ObjectTest'
 class App extends React.Component {
     render() {
         return <div>
             <Navbar />
             <hr />
-            <CompA />
+            <ObjectTest />
         </div>
     }
 }
