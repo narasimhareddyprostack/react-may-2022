@@ -1,8 +1,11 @@
-//react application main file 
-//let ReactDOM = require('react-dom')   ES5 
-import App from './App'
-import ReactDOM from 'react-dom'
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import App from './App';
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 
-ReactDOM.render(<App />, document.getElementById("root"))
-//what you want to render, where you want to render
+
+const root = createRoot(document.getElementById("root"))
+root.render
+    (
+        <App />
+    )
