@@ -1,14 +1,13 @@
 import React from 'react'
 import Navbar from './Navbar/Navbar'
-//import Message from './Message/Message'
-import Counter from './Counter/Counter'
-class App extends React.Component {
-    render() {
-        return <div>
+import Product from './Product/Product'
+const App = () => {
+    return (
+        <div>
             <Navbar />
-
-            <Counter />
+            <Product />
         </div>
-    }
+    )
 }
+
 export default App
