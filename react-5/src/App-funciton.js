@@ -3,22 +3,23 @@ import Navbar from './Navbar/Navbar'
 import Home from './DummyComp/Home'
 import About from './DummyComp/About'
 import Contact from './DummyComp/Contact'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-class App extends React.Component {
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+const App = () => {
 
-    render() {
-
-        return <React.Fragment>
+    return (
+        <div>
             <Router>
                 <Navbar />
                 <Routes>
-                    <Route path="/" element={<Home />} />
                     <Route path="/home" element={<Home />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/contact" element={<Contact />} />
+
                 </Routes>
             </Router>
-        </React.Fragment>
-    }
+
+        </div>
+    )
 }
+
 export default App
