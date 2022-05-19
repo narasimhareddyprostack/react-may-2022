@@ -18,15 +18,16 @@ class Login extends Component {
             password: event.target.value
         })
     }
-    loginHandler = ()=>{
-        //business logic to consure api
+    loginHandler = (event) => {
+        event.preventDefault()
+        console.log(this.state)
     }
     render() {
         return (
             <div>
                 <h1>Form Handling</h1>
                 <pre>{JSON.stringify(this.state)}</pre>
-                <form>
+                <form onSubmit={this.loginHandler}>
                     <label>Email</label>
                     <input onChange={this.emailHandler} type="text" /> <br /><br />
                     <label>Password</label>
