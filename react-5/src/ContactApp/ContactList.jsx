@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 
 export class ContactList extends Component {
+    selContactHandler = (contact) => {
+        this.props.methodOne(contact);
+        console.log(contact.name.first)
+    }
     render() {
         //let { contacts } = this.props.contacts
         return <div className="container">
@@ -20,7 +24,7 @@ export class ContactList extends Component {
                         <tbody>
                             {
                                 this.props.contacts.map((contact) => {
-                                    return <tr key={contact.login.uuid}>
+                                    return <tr onMouseOver={this.selContactHandler.bind(this, contact)} key={contact.login.uuid}>
                                         <td>{contact.login.uuid.substring(32, 36)}</td>
                                         <td>{contact.name.first}</td>
                                         <td>{contact.gender}</td>
