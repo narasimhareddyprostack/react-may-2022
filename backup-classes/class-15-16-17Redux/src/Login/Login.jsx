@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-
 const Login = () => {
     let [user, setUser] = useState({ email: "", password: "" })
     let inputHandler = (event) => {
