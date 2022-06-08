@@ -1,23 +1,21 @@
 import React from 'react'
 import Navbar from './Navbar/Navbar'
-import User from './components/User/User'
-import Employee from './components/User/Employee'
-import { Provider } from 'react-redux'
-import { store } from './redux/store'
+import Message from './HooksEx/Message'
+
+import ETApp from './ET/ETApp'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-class App extends React.Component {
-    render() {
-        return <React.Fragment>
-            <Provider store={store}>
-                <Router>
-                    <Navbar />
-                    <Routes>
-                        <Route path="/user" element={<User />} />
-                        <Route path="/emp" element={<Employee />} />
-                    </Routes>
-                </Router>
-            </Provider>
-        </React.Fragment>
-    }
+const App = () => {
+    return <>
+        <Router>
+            <Navbar />
+            <Routes>
+                <Route path="/message" element={<Message />} />
+                <Route path="/et" element={<ETApp />} />
+
+            </Routes>
+        </Router>
+
+    </>
 }
+
 export default App

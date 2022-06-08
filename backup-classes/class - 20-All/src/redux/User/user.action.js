@@ -20,10 +20,10 @@ let funFailure = (err) => {
 
 let getDataAction = () => {
     console.log("view to Action");
-
     return (dispatch) => {
         dispatch(funReq())
-        Axios.get('https://jsonplaceholder.typicode.com/users').then((response) => {
+        Axios.get('https://jsonplaceholder.typicode.com/users')
+        .then((response) => {
             dispatch(funSuccess(response.data))
         }).catch((err) => {
             dispatch(funFailure(err))
