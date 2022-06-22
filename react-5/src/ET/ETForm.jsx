@@ -2,33 +2,39 @@ import React, { useState } from 'react'
 
 const ETForm = (props) => {
     let { track, setTrack } = props
-    let [amount, setAmount] = useState(0)
-    let [balanceAmount, setBal] = useState(0);
-
+    let [totalAmount, setTotalAmount] = useState(0)
+    let [value, setValue] = useState(0)
+    value = parseInt(value)
     let todayDate = new Date().toLocaleString()
 
     let getAmountHandler = (event) => {
-        setAmount(parseInt(event.target.value))
+        setValue(event.target.value)
     }
     let addAmountHandler = () => {
-        setBal(parseInt(balanceAmount) + amount)
-        setAmount("")
+        setTotalAmount(totalAmount + value)
+        setValue("")
         setTrack([...track, {
             tdate: todayDate,
-            addAmount: amount,
+            addAmount: value,
             removeAmount: "-",
-            balanceAmount: balanceAmount
+            balanceAmount: totalAmount
 
         }])
 
-
-
     }
     let spendAmountHandler = () => {
-        setBal(balanceAmount - amount)
+        setTotalAmount(totalAmount - value)
+        setValue("")
+        setTrack([...track, {
+            tdate: todayDate,
+            addAmount: "-",
+            removeAmount: value,
+            balanceAmount: totalAmount
+
+        }])
     }
     return <div className="container">
-        <pre>Amount:{amount}</pre>
+        <pre>Amount:{value}</pre>
         <pre>Date:{todayDate}</pre>
         <div className="row">
             <div className="col-md-6">
@@ -39,7 +45,7 @@ const ETForm = (props) => {
                     <div className="card-body">
 
                         <div className="form-group">
-                            <input value={amount} type="number" className="form-control" onChange={getAmountHandler} />
+                            <input value={value} type="number" className="form-control" onChange={getAmountHandler} />
                         </div>
                         <input onClick={addAmountHandler} type="submit" value="ADD" className="btn btn-success mr-5" />
                         <input onClick={spendAmountHandler} type="submit" value="Remove" className="btn btn-warning" />

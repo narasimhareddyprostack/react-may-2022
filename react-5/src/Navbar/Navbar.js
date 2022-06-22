@@ -10,6 +10,7 @@ class Navbar extends Component {
                     <ul className="navbar-nav">
                         <li className="nav-item"> <Link className="nav-link" to="/message">useReducer Ex</Link></li>
                         <li className="nav-item"> <Link className="nav-link" to="/et">Expense Tracker</Link></li>
+                        <li className="nav-item"> <Link className="nav-link" to="/login">LoginEx useRef</Link></li>
 
 
                     </ul>
